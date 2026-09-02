@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halcón Ponderado - UV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo-area" onclick="showSection('inicio')">
+            <span class="logo-flor">⚜</span>
+        </div>
+        <nav class="nav-links">
+            <button onclick="showSection('agregar-estudiante')">AGREGAR ESTUDIANTE</button>
+            <button onclick="showSection('lista-estudiantes')">MOSTRAR LISTA DE ESTUDIANTES</button>
+            <button onclick="showSection('menu-modificar')">MODIFICAR</button>
+            <button onclick="showSection('menu-eliminar')">ELIMINAR</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <section id="inicio" class="view-section">
+            <h1 class="main-title">BIENVENIDO A <span class="blue">HALCÓN</span> <span class="green">PONDERADO</span></h1>
+            <h2 class="sub-title">¿QUÉ HACE EL SISTEMA?</h2>
+            <p class="description">
+                El sistema realiza el cálculo del promedio ponderado que se lleva respecto a las Experiencias Educativas que ha cursado hasta el momento. Ten cerca tus calificaciones y los créditos de cada Experiencia Educativa y el sistema te dará tu promedio sin problema.
+            </p>
+        </section>
+
+        
+        <section id="agregar-estudiante" class="view-section hidden">
+            <h1 class="main-title"><span class="green">DATOS DEL</span> <span class="blue">ESTUDIANTE</span></h1>
+            <form id="form-estudiante" class="form-container">
+                <div class="form-group">
+                    <label>Nombre completo:</label>
+                    <input type="text" id="add-nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Carrera:</label>
+                    <input type="text" id="add-carrera" placeholder="Ej. LIS, LISTI, LICID" required>
+                </div>
+                <div class="form-group">
+                    <label>Matrícula:</label>
+                    <input type="text" id="add-matricula" placeholder="Ej. S23004732" required>
+                </div>
+                <div class="form-group">
+                    <label>Semestre:</label>
+                    <input type="text" id="add-semestre" placeholder="Ej. 5°" required>
+                </div>
+                <button type="submit" class="btn-save">GUARDAR DATOS</button>
+            </form>
+        </section>
+
+        
+        <section id="lista-estudiantes" class="view-section hidden">
+            <h1 class="main-title"><span class="blue">LISTA DE</span> <span class="green">ESTUDIANTES</span></h1>
+            <table class="custom-table" id="tabla-estudiantes">
+                <thead>
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>CARRERA</th>
+                        <th>MATRÍCULA</th>
+                        <th>SEMESTRE</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-estudiantes"></tbody>
+            </table>
+
+            <div class="filter-action-grid">
+                <div class="filter-box">
+                    <h3 class="green">FILTRAR / SELECCIONAR:</h3>
+                    <label>Matrícula seleccionada:</label>
+                    <input type="text" id="selected-matricula" readonly placeholder="Haz clic en una fila de la tabla">
+                </div>
+                <div class="action-box">
+                    <h3 class="green">ELIGE UNA OPCIÓN</h3>
+                    <button class="btn-blue" onclick="abrirPromedio()">CALCULAR PROMEDIO PONDERADO</button>
+                    <button class="btn-green" onclick="abrirAgregarEE()">AÑADIR EE</button>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="detalle-promedio" class="view-section hidden">
+            <div class="student-header">
+                <h2>NOMBRE: <span id="prom-nombre" class="plain-text"></span></h2>
+                <h2>CARRERA: <span id="prom-carrera" class="green"></span></h2>
+            </div>
+            <table class="custom-table-blue">
+                <thead>
+                    <tr>
+                        <th>EXPERIENCIA EDUCATIVA</th>
+                        <th>CRÉDITOS</th>
+                        <th>CALIFICACIÓN</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-materias"></tbody>
+            </table>
+            <div class="promedio-summary">
+                <p class="blue bold">Total de créditos: <span id="total-creditos">0</span> créditos</p>
+                <p class="blue bold">Total de EE: <span id="total-ee">0</span> EE</p>
+                <h2 class="green">PROMEDIO PONDERADO: <span id="promedio-final">0.00</span></h2>
+            </div>
+        </section>
+
+        
+        <section id="registro-ee" class="view-section hidden">
+            <h1 class="main-title"><span class="green">REGISTRO DE</span> <span class="blue">EE</span></h1>
+            <p id="ee-student-info" class="bold center"></p>
+            <form id="form-ee" class="form-container">
+                <div class="form-group">
+                    <label>NOMBRE:</label>
+                    <input type="text" id="ee-nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>CRÉDITOS:</label>
+                    <input type="number" id="ee-creditos" step="1" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>CALIFICACIÓN:</label>
+                    <input type="number" id="ee-calificacion" step="0.1" min="0" max="10" required>
+                </div>
+                <button type="submit" class="btn-save">GUARDAR</button>
+            </form>
+        </section>
+
+        
+        <section id="menu-modificar" class="view-section hidden">
+            <h1 class="main-title"><span class="blue">ELIGE LO QUE SE DESEA</span> <span class="green">MODIFICAR</span></h1>
+            <div class="card-options">
+                <div class="card-btn card-blue" onclick="showSection('modificar-ee')">
+                    <div class="icon"></div>
+                    <h3>EE</h3>
+                </div>
+                <div class="card-btn card-green" onclick="showSection('modificar-alumno')">
+                    <div class="icon"></div>
+                    <h3>ESTUDIANTE</h3>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="modificar-ee" class="view-section hidden">
+            <h1 class="main-title"><span class="green">MODIFICAR EXPERIENCIA</span> <span class="blue">EDUCATIVA</span></h1>
+            <div class="mod-grid">
+                <div>
+                    <table class="custom-table-blue">
+                        <thead>
+                            <tr>
+                                <th>NOMBRE</th>
+                                <th>CRÉDITOS</th>
+                                <th>CALIF.</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-mod-ee"></tbody>
+                    </table>
+                    <form id="form-edit-ee" class="mini-form">
+                        <input type="hidden" id="edit-ee-id">
+                        <label>Nombre:</label><input type="text" id="edit-ee-nombre" required>
+                        <label>Créditos:</label><input type="number" id="edit-ee-creditos" required>
+                        <label>Calificación:</label><input type="number" step="0.1" id="edit-ee-calificacion" required>
+                        <button type="submit" class="btn-save">GUARDAR CAMBIOS</button>
+                    </form>
+                </div>
+                <div>
+                    <h3>ELEGIR ESTUDIANTE:</h3>
+                    <div id="list-students-ee" class="selection-list"></div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="modificar-alumno" class="view-section hidden">
+            <h1 class="main-title"><span class="green">MODIFICAR DATOS DEL</span> <span class="blue">ALUMNO</span></h1>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>CARRERA</th>
+                        <th>MATRÍCULA</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-mod-alumnos"></tbody>
+            </table>
+            <form id="form-edit-alumno" class="form-container">
+                <input type="hidden" id="edit-original-matricula">
+                <div class="form-group"><label>Nombre:</label><input type="text" id="edit-alumno-nombre" required></div>
+                <div class="form-group"><label>Carrera:</label><input type="text" id="edit-alumno-carrera" required></div>
+                <div class="form-group"><label>Semestre:</label><input type="text" id="edit-alumno-semestre" required></div>
+                <button type="submit" class="btn-save">GUARDAR</button>
+            </form>
+        </section>
+
+        
+        <section id="menu-eliminar" class="view-section hidden">
+            <h1 class="main-title"><span class="blue">ELIGE LO QUE SE DESEA</span> <span class="green">ELIMINAR</span></h1>
+            <div class="card-options">
+                <div class="card-btn card-blue" onclick="abrirEliminarEE()">
+                    <div class="icon"></div>
+                    <h3>EE</h3>
+                </div>
+                <div class="card-btn card-green" onclick="abrirEliminarEstudiante()">
+                    <div class="icon"></div>
+                    <h3>ESTUDIANTE</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

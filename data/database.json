@@ -1,0 +1,110 @@
+{
+  "estudiantes": [
+    {
+      "matricula": "S22019384",
+      "nombre": "Sofía Ramírez Torres",
+      "carrera": "Ingeniería en Ciencias de Datos (LICID)",
+      "semestre": "9°",
+      "historial_academico": []
+    },
+    {
+      "matricula": "S23004732",
+      "nombre": "Alejandro Morales Castro",
+      "carrera": "Ingeniería en Sistemas y Tecnologías de la Información (LISTI)",
+      "semestre": "7°",
+      "historial_academico": []
+    },
+    {
+      "matricula": "S24018491",
+      "nombre": "Valentina Gómez Silva",
+      "carrera": "Ingeniería de Software (LIS)",
+      "semestre": "5°",
+      "historial_academico": []
+    },
+    {
+      "matricula": "S24009215",
+      "nombre": "Mateo Fernández Ríos",
+      "carrera": "Ingeniería en Ciberseguridad e Infraestructura de Cómputo (LICIC)",
+      "semestre": "5°",
+      "historial_academico": []
+    },
+    {
+      "matricula": "S25012053",
+      "nombre": "Camila Navarro Mendoza",
+      "carrera": "Ingeniería de Software (LIS)",
+      "semestre": "3°",
+      "historial_academico": []
+    },
+    {
+      "matricula": "S25014829",
+      "nombre": "Lucas Delgado Ortiz",
+      "carrera": "Ingeniería en Sistemas y Tecnologías de la Información (LISTI)",
+      "semestre": "3°",
+      "historial_academico": []
+    },
+    {
+      "matricula": "S26003921",
+      "nombre": "Mariana Vega Paredes",
+      "carrera": "Ingeniería en Ciencias de Datos (LICID)",
+      "semestre": "1°",
+      "historial_academico": []
+    },
+    {
+      "matricula": "S26018240",
+      "nombre": "Gabriel Ruiz Benítez",
+      "carrera": "Ingeniería en Ciberseguridad e Infraestructura de Cómputo (LICIC)",
+      "semestre": "1°",
+      "historial_academico": []
+    },
+    {
+      "matricula": "S26007365",
+      "nombre": "Elena Cruz Peralta",
+      "carrera": "Ingeniería de Software (LIS)",
+      "semestre": "1°",
+      "historial_academico": []
+    }
+  ],
+  "catalogo_ee": [
+    { "id": "1", "nombre": "Lengua I", "creditos": 4, "calificacion": 9.0 },
+    { "id": "2", "nombre": "Literacidad Digital", "creditos": 4, "calificacion": 10.0 },
+    { "id": "3", "nombre": "Matemáticas para las Tecnologías de la Información", "creditos": 8, "calificacion": 8.5 },
+    { "id": "4", "nombre": "Fundamentos de Tecnologías de la Información", "creditos": 6, "calificacion": 9.5 },
+    { "id": "5", "nombre": "Lectura y Escritura de Textos Académicos", "creditos": 4, "calificacion": 9.0 },
+    { "id": "6", "nombre": "Introducción al Pensamiento Computacional", "creditos": 9, "calificacion": 10.0 },
+    { "id": "7", "nombre": "Pensamiento Crítico para la Solución de Problemas", "creditos": 4, "calificacion": 9.0 },
+    { "id": "8", "nombre": "Lengua II", "creditos": 4, "calificacion": 9.0 },
+    { "id": "9", "nombre": "Álgebra Lineal", "creditos": 8, "calificacion": 8.0 },
+    { "id": "10", "nombre": "Matemáticas Discretas", "creditos": 8, "calificacion": 8.5 },
+    { "id": "11", "nombre": "Probabilidad y Estadística", "creditos": 9, "calificacion": 9.0 },
+    { "id": "12", "nombre": "Sistemas Operativos", "creditos": 8, "calificacion": 9.5 },
+    { "id": "13", "nombre": "Algoritmos y Programación", "creditos": 9, "calificacion": 10.0 },
+    { "id": "14", "nombre": "Networking", "creditos": 9, "calificacion": 9.0 },
+    { "id": "15", "nombre": "Sistemas Electrónicos para Tecnologías de la Información", "creditos": 9, "calificacion": 8.5 },
+    { "id": "16", "nombre": "Bases de Datos Relacionales", "creditos": 9, "calificacion": 9.5 },
+    { "id": "17", "nombre": "Interacción Humano Computadora", "creditos": 9, "calificacion": 10.0 },
+    { "id": "18", "nombre": "Programación", "creditos": 9, "calificacion": 9.0 },
+    { "id": "19", "nombre": "Administración de Servidores", "creditos": 8, "calificacion": 9.5 },
+    { "id": "20", "nombre": "Bases de Datos Post-Relacionales", "creditos": 8, "calificacion": 9.0 },
+    { "id": "21", "nombre": "Procesos de Desarrollo de Software", "creditos": 9, "calificacion": 8.5 },
+    { "id": "22", "nombre": "Fundamentos de Tecnologías Web", "creditos": 8, "calificacion": 10.0 },
+    { "id": "23", "nombre": "Ética y Gestión Normativa", "creditos": 6, "calificacion": 9.5 },
+    { "id": "24", "nombre": "Optativa I", "creditos": 6, "calificacion": 9.0 },
+    { "id": "25", "nombre": "Principios de Ciberseguridad", "creditos": 6, "calificacion": 9.0 },
+    { "id": "26", "nombre": "Experiencia de Usuario", "creditos": 8, "calificacion": 9.5 },
+    { "id": "27", "nombre": "Administración de Base de Datos", "creditos": 8, "calificacion": 9.0 },
+    { "id": "28", "nombre": "Desarrollo Web", "creditos": 8, "calificacion": 10.0 },
+    { "id": "29", "nombre": "Liderazgo y Emprendimiento", "creditos": 6, "calificacion": 9.5 },
+    { "id": "30", "nombre": "Optativa II", "creditos": 6, "calificacion": 9.0 },
+    { "id": "31", "nombre": "Ciberseguridad Aplicada", "creditos": 9, "calificacion": 8.5 },
+    { "id": "32", "nombre": "Gestión del Proceso de Desarrollo de Software", "creditos": 8, "calificacion": 9.0 },
+    { "id": "33", "nombre": "Interfaces de Usuario Avanzadas", "creditos": 8, "calificacion": 9.5 },
+    { "id": "34", "nombre": "Desarrollo Móvil", "creditos": 8, "calificacion": 10.0 },
+    { "id": "35", "nombre": "Gestión de Proyectos de Tecnologías de la Información", "creditos": 8, "calificacion": 9.0 },
+    { "id": "36", "nombre": "Optativa III", "creditos": 6, "calificacion": 9.5 },
+    { "id": "37", "nombre": "Ingeniería de Datos", "creditos": 9, "calificacion": 9.0 },
+    { "id": "38", "nombre": "Tecnologías para la Integración de Soluciones", "creditos": 8, "calificacion": 9.5 },
+    { "id": "39", "nombre": "Internet de las Cosas", "creditos": 8, "calificacion": 9.0 },
+    { "id": "40", "nombre": "Proyecto Integrador de Software y Hardware", "creditos": 8, "calificacion": 9.5 },
+    { "id": "41", "nombre": "Acreditación del Idioma Inglés", "creditos": 6, "calificacion": "AC" }
+  ]
+}
