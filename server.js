@@ -46,7 +46,7 @@ app.post('/api/estudiantes', (req, res) => {
         nombre,
         carrera: carrera || '',
         semestre: semestre || '',
-        historial_academico: []
+        kardex: {}
     };
     db.estudiantes.push(nuevoEstudiante);
     writeDB(db);

@@ -91,6 +91,7 @@ async function abrirPromedio() {
         const califNum = parseFloat(m.calificacion);
         const esValida = !isNaN(califNum) && m.calificacion !== 'AC';
         if (esValida) {
+            
             totalCreditos += parseFloat(m.creditos) || 0;
             sumaPonderada += (parseFloat(m.creditos) || 0) * califNum;
             totalMateriasValidas++;
