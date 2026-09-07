@@ -4,107 +4,2051 @@
       "matricula": "S22019384",
       "nombre": "Sofía Ramírez Torres",
       "carrera": "Ingeniería en Ciencias de Datos (LICID)",
-      "semestre": "9°",
-      "historial_academico": []
+      "semestre": "9°"
     },
     {
       "matricula": "S23004732",
       "nombre": "Alejandro Morales Castro",
       "carrera": "Ingeniería en Sistemas y Tecnologías de la Información (LISTI)",
-      "semestre": "7°",
-      "historial_academico": []
+      "semestre": "7°"
     },
     {
       "matricula": "S24018491",
       "nombre": "Valentina Gómez Silva",
       "carrera": "Ingeniería de Software (LIS)",
-      "semestre": "5°",
-      "historial_academico": []
+      "semestre": "5°"
     },
     {
       "matricula": "S24009215",
       "nombre": "Mateo Fernández Ríos",
       "carrera": "Ingeniería en Ciberseguridad e Infraestructura de Cómputo (LICIC)",
-      "semestre": "5°",
-      "historial_academico": []
+      "semestre": "5°"
     },
     {
       "matricula": "S25012053",
       "nombre": "Camila Navarro Mendoza",
       "carrera": "Ingeniería de Software (LIS)",
-      "semestre": "3°",
-      "historial_academico": []
+      "semestre": "3°"
     },
     {
       "matricula": "S25014829",
       "nombre": "Lucas Delgado Ortiz",
       "carrera": "Ingeniería en Sistemas y Tecnologías de la Información (LISTI)",
-      "semestre": "3°",
-      "historial_academico": []
+      "semestre": "3°"
     },
     {
       "matricula": "S26003921",
-      "nombre": "Mariana Vega Paredes",
+      "nombre": "Mariana Vega Muros",
       "carrera": "Ingeniería en Ciencias de Datos (LICID)",
-      "semestre": "1°",
-      "historial_academico": []
+      "semestre": "1°"
     },
     {
       "matricula": "S26018240",
       "nombre": "Gabriel Ruiz Benítez",
       "carrera": "Ingeniería en Ciberseguridad e Infraestructura de Cómputo (LICIC)",
-      "semestre": "1°",
-      "historial_academico": []
+      "semestre": "1°"
     },
     {
       "matricula": "S26007365",
       "nombre": "Elena Cruz Peralta",
       "carrera": "Ingeniería de Software (LIS)",
-      "semestre": "1°",
-      "historial_academico": []
+      "semestre": "1°"
     }
   ],
-  "catalogo_ee": [
-    { "id": "1", "nombre": "Lengua I", "creditos": 4, "calificacion": 9.0 },
-    { "id": "2", "nombre": "Literacidad Digital", "creditos": 4, "calificacion": 10.0 },
-    { "id": "3", "nombre": "Matemáticas para las Tecnologías de la Información", "creditos": 8, "calificacion": 8.5 },
-    { "id": "4", "nombre": "Fundamentos de Tecnologías de la Información", "creditos": 6, "calificacion": 9.5 },
-    { "id": "5", "nombre": "Lectura y Escritura de Textos Académicos", "creditos": 4, "calificacion": 9.0 },
-    { "id": "6", "nombre": "Introducción al Pensamiento Computacional", "creditos": 9, "calificacion": 10.0 },
-    { "id": "7", "nombre": "Pensamiento Crítico para la Solución de Problemas", "creditos": 4, "calificacion": 9.0 },
-    { "id": "8", "nombre": "Lengua II", "creditos": 4, "calificacion": 9.0 },
-    { "id": "9", "nombre": "Álgebra Lineal", "creditos": 8, "calificacion": 8.0 },
-    { "id": "10", "nombre": "Matemáticas Discretas", "creditos": 8, "calificacion": 8.5 },
-    { "id": "11", "nombre": "Probabilidad y Estadística", "creditos": 9, "calificacion": 9.0 },
-    { "id": "12", "nombre": "Sistemas Operativos", "creditos": 8, "calificacion": 9.5 },
-    { "id": "13", "nombre": "Algoritmos y Programación", "creditos": 9, "calificacion": 10.0 },
-    { "id": "14", "nombre": "Networking", "creditos": 9, "calificacion": 9.0 },
-    { "id": "15", "nombre": "Sistemas Electrónicos para Tecnologías de la Información", "creditos": 9, "calificacion": 8.5 },
-    { "id": "16", "nombre": "Bases de Datos Relacionales", "creditos": 9, "calificacion": 9.5 },
-    { "id": "17", "nombre": "Interacción Humano Computadora", "creditos": 9, "calificacion": 10.0 },
-    { "id": "18", "nombre": "Programación", "creditos": 9, "calificacion": 9.0 },
-    { "id": "19", "nombre": "Administración de Servidores", "creditos": 8, "calificacion": 9.5 },
-    { "id": "20", "nombre": "Bases de Datos Post-Relacionales", "creditos": 8, "calificacion": 9.0 },
-    { "id": "21", "nombre": "Procesos de Desarrollo de Software", "creditos": 9, "calificacion": 8.5 },
-    { "id": "22", "nombre": "Fundamentos de Tecnologías Web", "creditos": 8, "calificacion": 10.0 },
-    { "id": "23", "nombre": "Ética y Gestión Normativa", "creditos": 6, "calificacion": 9.5 },
-    { "id": "24", "nombre": "Optativa I", "creditos": 6, "calificacion": 9.0 },
-    { "id": "25", "nombre": "Principios de Ciberseguridad", "creditos": 6, "calificacion": 9.0 },
-    { "id": "26", "nombre": "Experiencia de Usuario", "creditos": 8, "calificacion": 9.5 },
-    { "id": "27", "nombre": "Administración de Base de Datos", "creditos": 8, "calificacion": 9.0 },
-    { "id": "28", "nombre": "Desarrollo Web", "creditos": 8, "calificacion": 10.0 },
-    { "id": "29", "nombre": "Liderazgo y Emprendimiento", "creditos": 6, "calificacion": 9.5 },
-    { "id": "30", "nombre": "Optativa II", "creditos": 6, "calificacion": 9.0 },
-    { "id": "31", "nombre": "Ciberseguridad Aplicada", "creditos": 9, "calificacion": 8.5 },
-    { "id": "32", "nombre": "Gestión del Proceso de Desarrollo de Software", "creditos": 8, "calificacion": 9.0 },
-    { "id": "33", "nombre": "Interfaces de Usuario Avanzadas", "creditos": 8, "calificacion": 9.5 },
-    { "id": "34", "nombre": "Desarrollo Móvil", "creditos": 8, "calificacion": 10.0 },
-    { "id": "35", "nombre": "Gestión de Proyectos de Tecnologías de la Información", "creditos": 8, "calificacion": 9.0 },
-    { "id": "36", "nombre": "Optativa III", "creditos": 6, "calificacion": 9.5 },
-    { "id": "37", "nombre": "Ingeniería de Datos", "creditos": 9, "calificacion": 9.0 },
-    { "id": "38", "nombre": "Tecnologías para la Integración de Soluciones", "creditos": 8, "calificacion": 9.5 },
-    { "id": "39", "nombre": "Internet de las Cosas", "creditos": 8, "calificacion": 9.0 },
-    { "id": "40", "nombre": "Proyecto Integrador de Software y Hardware", "creditos": 8, "calificacion": 9.5 },
-    { "id": "41", "nombre": "Acreditación del Idioma Inglés", "creditos": 6, "calificacion": "AC" }
+  "experiencias_educativas": [
+    {
+      "nrc": "10001",
+      "nombre": "Lengua I",
+      "carrera": "AFBG",
+      "creditos": 4
+    },
+    {
+      "nrc": "10002",
+      "nombre": "Literacidad digital",
+      "carrera": "AFBG",
+      "creditos": 4
+    },
+    {
+      "nrc": "10003",
+      "nombre": "Lectura y escritura de textos académicos",
+      "carrera": "AFBG",
+      "creditos": 4
+    },
+    {
+      "nrc": "10004",
+      "nombre": "Pensamiento crítico para la solución de problemas",
+      "carrera": "AFBG",
+      "creditos": 4
+    },
+    {
+      "nrc": "10005",
+      "nombre": "Lengua II",
+      "carrera": "AFBG",
+      "creditos": 4
+    },
+    {
+      "nrc": "10006",
+      "nombre": "Acreditación de la lengua",
+      "carrera": "AFBG",
+      "creditos": 6
+    },
+    {
+      "nrc": "10007",
+      "nombre": "Habilidades de comunicación",
+      "carrera": "AFBG",
+      "creditos": 6
+    },
+    {
+      "nrc": "20001",
+      "nombre": "Cálculo I",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20002",
+      "nombre": "Introducción a la ciencia de datos",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20003",
+      "nombre": "Algebra lineal I",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20004",
+      "nombre": "Introducción a la programación",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20005",
+      "nombre": "Cálculo II",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20006",
+      "nombre": "Métodos estadísticos",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20007",
+      "nombre": "Álgebra lineal II",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20008",
+      "nombre": "Estructuras de datos y análisis de algoritmos",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20009",
+      "nombre": "Instrumentos de Captación de Datos",
+      "carrera": "LICID",
+      "creditos": 7
+    },
+    {
+      "nrc": "20010",
+      "nombre": "Muestreo",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20011",
+      "nombre": "Métodos multivariados",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20012",
+      "nombre": "Matemáticas para ciencias de datos",
+      "carrera": "LICID",
+      "creditos": 6
+    },
+    {
+      "nrc": "20013",
+      "nombre": "Modelos de probabilidad I",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20014",
+      "nombre": "Modelos estadísticos",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20015",
+      "nombre": "Algoritmos de optimización y simulación",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20016",
+      "nombre": "Aprendizaje máquina",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20017",
+      "nombre": "Series de tiempo",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20018",
+      "nombre": "Visualización de datos",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20019",
+      "nombre": "Modelos de probabilidad II",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20020",
+      "nombre": "Diseño y análisis de experimentos",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20021",
+      "nombre": "Bases de datos relacionales",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20022",
+      "nombre": "Aprendizaje máquina supervisado",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20023",
+      "nombre": "Aprendizaje máquina no supervisado",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20024",
+      "nombre": "Metodología de la Investigación",
+      "carrera": "LICID",
+      "creditos": 10
+    },
+    {
+      "nrc": "20025",
+      "nombre": "Teoría estadística",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20026",
+      "nombre": "Modelos estadísticos avanzados",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20027",
+      "nombre": "Bases de datos no relacionales",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20028",
+      "nombre": "Estadística espacial",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20029",
+      "nombre": "Leadership and entrepreneurship",
+      "carrera": "LICID",
+      "creditos": 6
+    },
+    {
+      "nrc": "20030",
+      "nombre": "Estadística bayeseana",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20031",
+      "nombre": "Control de calidad",
+      "carrera": "LICID",
+      "creditos": 7
+    },
+    {
+      "nrc": "20032",
+      "nombre": "Optativa I",
+      "carrera": "LICID",
+      "creditos": 7
+    },
+    {
+      "nrc": "20033",
+      "nombre": "Tópicos avanzados de aprendizaje máquina",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20034",
+      "nombre": "Proyecto de ciencia de datos",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20035",
+      "nombre": "Optativa II",
+      "carrera": "LICID",
+      "creditos": 7
+    },
+    {
+      "nrc": "20036",
+      "nombre": "Business intelligence",
+      "carrera": "LICID",
+      "creditos": 7
+    },
+    {
+      "nrc": "20037",
+      "nombre": "Optativa III",
+      "carrera": "LICID",
+      "creditos": 7
+    },
+    {
+      "nrc": "20038",
+      "nombre": "Big data",
+      "carrera": "LICID",
+      "creditos": 9
+    },
+    {
+      "nrc": "20039",
+      "nombre": "Servicio Social",
+      "carrera": "LICID",
+      "creditos": 12
+    },
+    {
+      "nrc": "20040",
+      "nombre": "Práctica profesional",
+      "carrera": "LICID",
+      "creditos": 8
+    },
+    {
+      "nrc": "20041",
+      "nombre": "Experiencia recepcional",
+      "carrera": "LICID",
+      "creditos": 12
+    },
+    {
+      "nrc": "30001",
+      "nombre": "Matemáticas para las Tecnologías de la Información",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30002",
+      "nombre": "Fundamentos de Tecnologías de la Información",
+      "carrera": "LISTI",
+      "creditos": 6
+    },
+    {
+      "nrc": "30003",
+      "nombre": "Introducción al Pensamiento Computacional",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30004",
+      "nombre": "Álgebra Lineal",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30005",
+      "nombre": "Matemáticas Discretas",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30006",
+      "nombre": "Probabilidad y Estadística",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30007",
+      "nombre": "Sistemas Operativos",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30008",
+      "nombre": "Algoritmos y Programación",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30009",
+      "nombre": "Networking",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30010",
+      "nombre": "Sistemas Electrónicos para Tecnologías de la Información",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30011",
+      "nombre": "Bases de Datos Relacionales",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30012",
+      "nombre": "Interacción Humano Computadora",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30013",
+      "nombre": "Programación",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30014",
+      "nombre": "Administración de Servidores",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30015",
+      "nombre": "Bases de Datos Post-Relacionales",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30016",
+      "nombre": "Procesos de Desarrollo de Software",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30017",
+      "nombre": "Fundamentos de Tecnologías Web",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30018",
+      "nombre": "Ética y Gestión Normativa",
+      "carrera": "LISTI",
+      "creditos": 6
+    },
+    {
+      "nrc": "30019",
+      "nombre": "Optativa I",
+      "carrera": "LISTI",
+      "creditos": 6
+    },
+    {
+      "nrc": "30020",
+      "nombre": "Principios de Ciberseguridad",
+      "carrera": "LISTI",
+      "creditos": 6
+    },
+    {
+      "nrc": "30021",
+      "nombre": "Experiencia de Usuario",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30022",
+      "nombre": "Administración de Base de Datos",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30023",
+      "nombre": "Desarrollo Web",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30024",
+      "nombre": "Liderazgo y Emprendimiento",
+      "carrera": "LISTI",
+      "creditos": 6
+    },
+    {
+      "nrc": "30025",
+      "nombre": "Optativa II",
+      "carrera": "LISTI",
+      "creditos": 6
+    },
+    {
+      "nrc": "30026",
+      "nombre": "Ciberseguridad Aplicada",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30027",
+      "nombre": "Gestión del Proceso de Desarrollo de Software",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30028",
+      "nombre": "Interfaces de Usuario Avanzadas",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30029",
+      "nombre": "Desarrollo Móvil",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30030",
+      "nombre": "Gestión de Proyectos de Tecnologías de la Información",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30031",
+      "nombre": "Optativa III",
+      "carrera": "LISTI",
+      "creditos": 6
+    },
+    {
+      "nrc": "30032",
+      "nombre": "Ingeniería de Datos",
+      "carrera": "LISTI",
+      "creditos": 9
+    },
+    {
+      "nrc": "30033",
+      "nombre": "Tecnologías para la Integración de Soluciones",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "30034",
+      "nombre": "Internet de las Cosas",
+      "carrera": "LISTI",
+      "creditos": 8
+    },
+    {
+      "nrc": "40001",
+      "nombre": "Fundamentos de ingenieria de software",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40002",
+      "nombre": "Metodología de la programación",
+      "carrera": "LIS",
+      "creditos": 9
+    },
+    {
+      "nrc": "40003",
+      "nombre": "Álgebra lineal",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40004",
+      "nombre": "Lógica",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40005",
+      "nombre": "Estructuras de datos",
+      "carrera": "LIS",
+      "creditos": 9
+    },
+    {
+      "nrc": "40006",
+      "nombre": "Matemáticas discretas",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40007",
+      "nombre": "Arquitectura de computadoras",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40008",
+      "nombre": "Requisitos de software",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40009",
+      "nombre": "Procesos para ingeniería de software",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40010",
+      "nombre": "Diseño y programación orientada a objetos",
+      "carrera": "LIS",
+      "creditos": 9
+    },
+    {
+      "nrc": "40011",
+      "nombre": "Bases de datos",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40012",
+      "nombre": "Redes de computadoras para el desarrollo de software",
+      "carrera": "LIS",
+      "creditos": 9
+    },
+    {
+      "nrc": "40013",
+      "nombre": "Principios de diseño de software",
+      "carrera": "LIS",
+      "creditos": 9
+    },
+    {
+      "nrc": "40014",
+      "nombre": "Programación para aplicaciones de escritorio",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40015",
+      "nombre": "Principios de construcción de software",
+      "carrera": "LIS",
+      "creditos": 9
+    },
+    {
+      "nrc": "40016",
+      "nombre": "Bases de datos para el desarrollo de software",
+      "carrera": "LIS",
+      "creditos": 7
+    },
+    {
+      "nrc": "40017",
+      "nombre": "Sistemas operativos",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40018",
+      "nombre": "Diseño de software",
+      "carrera": "LIS",
+      "creditos": 9
+    },
+    {
+      "nrc": "40019",
+      "nombre": "Diseño de interfaces de usuario",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40020",
+      "nombre": "Tecnologías para la construcción de software",
+      "carrera": "LIS",
+      "creditos": 9
+    },
+    {
+      "nrc": "40021",
+      "nombre": "Inteligencia artificial",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "40022",
+      "nombre": "Aspectos de seguridad para el desarrollo de software",
+      "carrera": "LIS",
+      "creditos": 8
+    },
+    {
+      "nrc": "50001",
+      "nombre": "Introducción a la Ciberseguridad",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50002",
+      "nombre": "Organización de Computadoras",
+      "carrera": "LICIC",
+      "creditos": 8
+    },
+    {
+      "nrc": "50003",
+      "nombre": "Introducción a la Programación",
+      "carrera": "LICIC",
+      "creditos": 9
+    },
+    {
+      "nrc": "50004",
+      "nombre": "Probabilidad y Estadística",
+      "carrera": "LICIC",
+      "creditos": 8
+    },
+    {
+      "nrc": "50005",
+      "nombre": "Sistemas Operativos",
+      "carrera": "LICIC",
+      "creditos": 8
+    },
+    {
+      "nrc": "50006",
+      "nombre": "Marco legal y ético de la ciberseguridad",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50007",
+      "nombre": "Introducción a las redes de cómputo",
+      "carrera": "LICIC",
+      "creditos": 10
+    },
+    {
+      "nrc": "50008",
+      "nombre": "Estructuras de Datos",
+      "carrera": "LICIC",
+      "creditos": 8
+    },
+    {
+      "nrc": "50009",
+      "nombre": "Arquitecturas de red",
+      "carrera": "LICIC",
+      "creditos": 9
+    },
+    {
+      "nrc": "50010",
+      "nombre": "Administración de Servidores",
+      "carrera": "LICIC",
+      "creditos": 8
+    },
+    {
+      "nrc": "50011",
+      "nombre": "Bases de Datos",
+      "carrera": "LICIC",
+      "creditos": 9
+    },
+    {
+      "nrc": "50012",
+      "nombre": "Conmutación de LAN",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50013",
+      "nombre": "Enrutamiento Básico",
+      "carrera": "LICIC",
+      "creditos": 9
+    },
+    {
+      "nrc": "50014",
+      "nombre": "Lenguajes y paradigmas de programación",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50015",
+      "nombre": "Matemáticas para ciberseguridad",
+      "carrera": "LICIC",
+      "creditos": 8
+    },
+    {
+      "nrc": "50016",
+      "nombre": "Admon. avanzada de servicios",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50017",
+      "nombre": "Aspectos sociales de ciberseguridad",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50018",
+      "nombre": "Aprendizaje máquina",
+      "carrera": "LICIC",
+      "creditos": 6
+    },
+    {
+      "nrc": "50019",
+      "nombre": "Enrutamiento Avanzado",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50020",
+      "nombre": "Programación en la admon. de servicios",
+      "carrera": "LICIC",
+      "creditos": 6
+    },
+    {
+      "nrc": "50021",
+      "nombre": "Criptografia",
+      "carrera": "LICIC",
+      "creditos": 8
+    },
+    {
+      "nrc": "50022",
+      "nombre": "Cómputo en la nube",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50023",
+      "nombre": "Administración de Bases de datos",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50024",
+      "nombre": "Seguridad en redes de cómputo",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50025",
+      "nombre": "Programación en red",
+      "carrera": "LICIC",
+      "creditos": 7
+    },
+    {
+      "nrc": "50026",
+      "nombre": "Internet de las Cosas",
+      "carrera": "LICIC",
+      "creditos": 6
+    }
+  ],
+  "inscripciones": [
+    {
+      "id": "1",
+      "matricula": "S22019384",
+      "nrc": "10001",
+      "calificacion": 8.5
+    },
+    {
+      "id": "2",
+      "matricula": "S22019384",
+      "nrc": "10002",
+      "calificacion": 10
+    },
+    {
+      "id": "3",
+      "matricula": "S22019384",
+      "nrc": "10003",
+      "calificacion": 9
+    },
+    {
+      "id": "4",
+      "matricula": "S22019384",
+      "nrc": "10004",
+      "calificacion": 8
+    },
+    {
+      "id": "5",
+      "matricula": "S22019384",
+      "nrc": "20001",
+      "calificacion": 7.5
+    },
+    {
+      "id": "6",
+      "matricula": "S22019384",
+      "nrc": "20002",
+      "calificacion": 10
+    },
+    {
+      "id": "7",
+      "matricula": "S22019384",
+      "nrc": "20003",
+      "calificacion": 8
+    },
+    {
+      "id": "8",
+      "matricula": "S22019384",
+      "nrc": "20004",
+      "calificacion": 9.5
+    },
+    {
+      "id": "9",
+      "matricula": "S22019384",
+      "nrc": "10005",
+      "calificacion": 9
+    },
+    {
+      "id": "10",
+      "matricula": "S22019384",
+      "nrc": "20005",
+      "calificacion": 7
+    },
+    {
+      "id": "11",
+      "matricula": "S22019384",
+      "nrc": "20006",
+      "calificacion": 8.5
+    },
+    {
+      "id": "12",
+      "matricula": "S22019384",
+      "nrc": "20007",
+      "calificacion": 7.5
+    },
+    {
+      "id": "13",
+      "matricula": "S22019384",
+      "nrc": "20008",
+      "calificacion": 9
+    },
+    {
+      "id": "14",
+      "matricula": "S22019384",
+      "nrc": "20009",
+      "calificacion": 8.5
+    },
+    {
+      "id": "15",
+      "matricula": "S22019384",
+      "nrc": "20010",
+      "calificacion": 8
+    },
+    {
+      "id": "16",
+      "matricula": "S22019384",
+      "nrc": "20011",
+      "calificacion": 8.5
+    },
+    {
+      "id": "17",
+      "matricula": "S22019384",
+      "nrc": "20012",
+      "calificacion": 7.5
+    },
+    {
+      "id": "18",
+      "matricula": "S22019384",
+      "nrc": "20013",
+      "calificacion": 8
+    },
+    {
+      "id": "19",
+      "matricula": "S22019384",
+      "nrc": "20014",
+      "calificacion": 9
+    },
+    {
+      "id": "20",
+      "matricula": "S22019384",
+      "nrc": "20015",
+      "calificacion": 8.5
+    },
+    {
+      "id": "21",
+      "matricula": "S22019384",
+      "nrc": "20016",
+      "calificacion": 9.5
+    },
+    {
+      "id": "22",
+      "matricula": "S22019384",
+      "nrc": "20017",
+      "calificacion": 8
+    },
+    {
+      "id": "23",
+      "matricula": "S22019384",
+      "nrc": "20018",
+      "calificacion": 10
+    },
+    {
+      "id": "24",
+      "matricula": "S22019384",
+      "nrc": "20019",
+      "calificacion": 7.5
+    },
+    {
+      "id": "25",
+      "matricula": "S22019384",
+      "nrc": "20020",
+      "calificacion": 8.5
+    },
+    {
+      "id": "26",
+      "matricula": "S22019384",
+      "nrc": "20021",
+      "calificacion": 9
+    },
+    {
+      "id": "27",
+      "matricula": "S22019384",
+      "nrc": "20022",
+      "calificacion": 9.5
+    },
+    {
+      "id": "28",
+      "matricula": "S22019384",
+      "nrc": "20023",
+      "calificacion": 9
+    },
+    {
+      "id": "29",
+      "matricula": "S22019384",
+      "nrc": "20024",
+      "calificacion": 8.5
+    },
+    {
+      "id": "30",
+      "matricula": "S22019384",
+      "nrc": "20025",
+      "calificacion": 8
+    },
+    {
+      "id": "31",
+      "matricula": "S22019384",
+      "nrc": "20026",
+      "calificacion": 8.5
+    },
+    {
+      "id": "32",
+      "matricula": "S22019384",
+      "nrc": "20027",
+      "calificacion": 9.5
+    },
+    {
+      "id": "33",
+      "matricula": "S22019384",
+      "nrc": "20028",
+      "calificacion": 8
+    },
+    {
+      "id": "34",
+      "matricula": "S22019384",
+      "nrc": "20029",
+      "calificacion": 10
+    },
+    {
+      "id": "35",
+      "matricula": "S22019384",
+      "nrc": "20030",
+      "calificacion": 8.5
+    },
+    {
+      "id": "36",
+      "matricula": "S22019384",
+      "nrc": "20031",
+      "calificacion": 9
+    },
+    {
+      "id": "37",
+      "matricula": "S22019384",
+      "nrc": "20032",
+      "calificacion": 8.5
+    },
+    {
+      "id": "38",
+      "matricula": "S22019384",
+      "nrc": "20033",
+      "calificacion": 9.5
+    },
+    {
+      "id": "39",
+      "matricula": "S22019384",
+      "nrc": "20034",
+      "calificacion": 10
+    },
+    {
+      "id": "40",
+      "matricula": "S22019384",
+      "nrc": "20035",
+      "calificacion": 9
+    },
+    {
+      "id": "41",
+      "matricula": "S22019384",
+      "nrc": "20036",
+      "calificacion": 9.5
+    },
+    {
+      "id": "42",
+      "matricula": "S22019384",
+      "nrc": "20037",
+      "calificacion": 8.5
+    },
+    {
+      "id": "43",
+      "matricula": "S22019384",
+      "nrc": "10006",
+      "calificacion": "AC"
+    },
+    {
+      "id": "44",
+      "matricula": "S22019384",
+      "nrc": "20038",
+      "calificacion": 9
+    },
+    {
+      "id": "45",
+      "matricula": "S22019384",
+      "nrc": "20039",
+      "calificacion": "AC"
+    },
+    {
+      "id": "46",
+      "matricula": "S22019384",
+      "nrc": "20040",
+      "calificacion": "AC"
+    },
+    {
+      "id": "47",
+      "matricula": "S22019384",
+      "nrc": "20041",
+      "calificacion": 10
+    },
+    {
+      "id": "48",
+      "matricula": "S23004732",
+      "nrc": "10001",
+      "calificacion": 9
+    },
+    {
+      "id": "49",
+      "matricula": "S23004732",
+      "nrc": "10002",
+      "calificacion": 10
+    },
+    {
+      "id": "50",
+      "matricula": "S23004732",
+      "nrc": "30001",
+      "calificacion": 8.5
+    },
+    {
+      "id": "51",
+      "matricula": "S23004732",
+      "nrc": "30002",
+      "calificacion": 9.5
+    },
+    {
+      "id": "52",
+      "matricula": "S23004732",
+      "nrc": "10003",
+      "calificacion": 9
+    },
+    {
+      "id": "53",
+      "matricula": "S23004732",
+      "nrc": "30003",
+      "calificacion": 10
+    },
+    {
+      "id": "54",
+      "matricula": "S23004732",
+      "nrc": "10004",
+      "calificacion": 9
+    },
+    {
+      "id": "55",
+      "matricula": "S23004732",
+      "nrc": "10005",
+      "calificacion": 9
+    },
+    {
+      "id": "56",
+      "matricula": "S23004732",
+      "nrc": "30004",
+      "calificacion": 8
+    },
+    {
+      "id": "57",
+      "matricula": "S23004732",
+      "nrc": "30005",
+      "calificacion": 8.5
+    },
+    {
+      "id": "58",
+      "matricula": "S23004732",
+      "nrc": "30006",
+      "calificacion": 9
+    },
+    {
+      "id": "59",
+      "matricula": "S23004732",
+      "nrc": "30007",
+      "calificacion": 9.5
+    },
+    {
+      "id": "60",
+      "matricula": "S23004732",
+      "nrc": "30008",
+      "calificacion": 10
+    },
+    {
+      "id": "61",
+      "matricula": "S23004732",
+      "nrc": "30009",
+      "calificacion": 9
+    },
+    {
+      "id": "62",
+      "matricula": "S23004732",
+      "nrc": "30010",
+      "calificacion": 8.5
+    },
+    {
+      "id": "63",
+      "matricula": "S23004732",
+      "nrc": "30011",
+      "calificacion": 9.5
+    },
+    {
+      "id": "64",
+      "matricula": "S23004732",
+      "nrc": "30012",
+      "calificacion": 10
+    },
+    {
+      "id": "65",
+      "matricula": "S23004732",
+      "nrc": "30013",
+      "calificacion": 9
+    },
+    {
+      "id": "66",
+      "matricula": "S23004732",
+      "nrc": "30014",
+      "calificacion": 9.5
+    },
+    {
+      "id": "67",
+      "matricula": "S23004732",
+      "nrc": "30015",
+      "calificacion": 9
+    },
+    {
+      "id": "68",
+      "matricula": "S23004732",
+      "nrc": "30016",
+      "calificacion": 8.5
+    },
+    {
+      "id": "69",
+      "matricula": "S23004732",
+      "nrc": "30017",
+      "calificacion": 10
+    },
+    {
+      "id": "70",
+      "matricula": "S23004732",
+      "nrc": "30018",
+      "calificacion": 9.5
+    },
+    {
+      "id": "71",
+      "matricula": "S23004732",
+      "nrc": "30019",
+      "calificacion": 9
+    },
+    {
+      "id": "72",
+      "matricula": "S23004732",
+      "nrc": "30020",
+      "calificacion": 9
+    },
+    {
+      "id": "73",
+      "matricula": "S23004732",
+      "nrc": "30021",
+      "calificacion": 9.5
+    },
+    {
+      "id": "74",
+      "matricula": "S23004732",
+      "nrc": "30022",
+      "calificacion": 9
+    },
+    {
+      "id": "75",
+      "matricula": "S23004732",
+      "nrc": "30023",
+      "calificacion": 10
+    },
+    {
+      "id": "76",
+      "matricula": "S23004732",
+      "nrc": "30024",
+      "calificacion": 9.5
+    },
+    {
+      "id": "77",
+      "matricula": "S23004732",
+      "nrc": "30025",
+      "calificacion": 9
+    },
+    {
+      "id": "78",
+      "matricula": "S23004732",
+      "nrc": "30026",
+      "calificacion": 8.5
+    },
+    {
+      "id": "79",
+      "matricula": "S23004732",
+      "nrc": "30027",
+      "calificacion": 9
+    },
+    {
+      "id": "80",
+      "matricula": "S23004732",
+      "nrc": "30028",
+      "calificacion": 9.5
+    },
+    {
+      "id": "81",
+      "matricula": "S23004732",
+      "nrc": "30029",
+      "calificacion": 10
+    },
+    {
+      "id": "82",
+      "matricula": "S23004732",
+      "nrc": "30030",
+      "calificacion": 9
+    },
+    {
+      "id": "83",
+      "matricula": "S23004732",
+      "nrc": "30031",
+      "calificacion": 9.5
+    },
+    {
+      "id": "84",
+      "matricula": "S23004732",
+      "nrc": "30032",
+      "calificacion": 9
+    },
+    {
+      "id": "85",
+      "matricula": "S23004732",
+      "nrc": "30033",
+      "calificacion": 9.5
+    },
+    {
+      "id": "86",
+      "matricula": "S23004732",
+      "nrc": "30034",
+      "calificacion": 9
+    },
+    {
+      "id": "87",
+      "matricula": "S24018491",
+      "nrc": "10001",
+      "calificacion": 8
+    },
+    {
+      "id": "88",
+      "matricula": "S24018491",
+      "nrc": "40001",
+      "calificacion": 9.5
+    },
+    {
+      "id": "89",
+      "matricula": "S24018491",
+      "nrc": "40002",
+      "calificacion": 10
+    },
+    {
+      "id": "90",
+      "matricula": "S24018491",
+      "nrc": "40003",
+      "calificacion": 7
+    },
+    {
+      "id": "91",
+      "matricula": "S24018491",
+      "nrc": "40004",
+      "calificacion": 8.5
+    },
+    {
+      "id": "92",
+      "matricula": "S24018491",
+      "nrc": "10004",
+      "calificacion": 9
+    },
+    {
+      "id": "93",
+      "matricula": "S24018491",
+      "nrc": "10005",
+      "calificacion": 8.5
+    },
+    {
+      "id": "94",
+      "matricula": "S24018491",
+      "nrc": "10007",
+      "calificacion": 9
+    },
+    {
+      "id": "95",
+      "matricula": "S24018491",
+      "nrc": "40005",
+      "calificacion": 8
+    },
+    {
+      "id": "96",
+      "matricula": "S24018491",
+      "nrc": "40006",
+      "calificacion": 7.5
+    },
+    {
+      "id": "97",
+      "matricula": "S24018491",
+      "nrc": "40007",
+      "calificacion": 8.5
+    },
+    {
+      "id": "98",
+      "matricula": "S24018491",
+      "nrc": "10003",
+      "calificacion": 9
+    },
+    {
+      "id": "99",
+      "matricula": "S24018491",
+      "nrc": "40008",
+      "calificacion": 9.5
+    },
+    {
+      "id": "100",
+      "matricula": "S24018491",
+      "nrc": "40009",
+      "calificacion": 8.5
+    },
+    {
+      "id": "101",
+      "matricula": "S24018491",
+      "nrc": "40010",
+      "calificacion": 9.5
+    },
+    {
+      "id": "102",
+      "matricula": "S24018491",
+      "nrc": "40011",
+      "calificacion": 8
+    },
+    {
+      "id": "103",
+      "matricula": "S24018491",
+      "nrc": "40012",
+      "calificacion": 7.5
+    },
+    {
+      "id": "104",
+      "matricula": "S24018491",
+      "nrc": "10002",
+      "calificacion": 10
+    },
+    {
+      "id": "105",
+      "matricula": "S24018491",
+      "nrc": "40013",
+      "calificacion": 9
+    },
+    {
+      "id": "106",
+      "matricula": "S24018491",
+      "nrc": "40014",
+      "calificacion": 9.5
+    },
+    {
+      "id": "107",
+      "matricula": "S24018491",
+      "nrc": "40015",
+      "calificacion": 8.5
+    },
+    {
+      "id": "108",
+      "matricula": "S24018491",
+      "nrc": "40016",
+      "calificacion": 8
+    },
+    {
+      "id": "109",
+      "matricula": "S24018491",
+      "nrc": "40017",
+      "calificacion": 7.5
+    },
+    {
+      "id": "110",
+      "matricula": "S24018491",
+      "nrc": "40018",
+      "calificacion": 9.5
+    },
+    {
+      "id": "111",
+      "matricula": "S24018491",
+      "nrc": "40019",
+      "calificacion": 10
+    },
+    {
+      "id": "112",
+      "matricula": "S24018491",
+      "nrc": "40020",
+      "calificacion": 9
+    },
+    {
+      "id": "113",
+      "matricula": "S24018491",
+      "nrc": "40021",
+      "calificacion": 8
+    },
+    {
+      "id": "114",
+      "matricula": "S24018491",
+      "nrc": "40022",
+      "calificacion": 8.5
+    },
+    {
+      "id": "115",
+      "matricula": "S24009215",
+      "nrc": "10003",
+      "calificacion": 9
+    },
+    {
+      "id": "116",
+      "matricula": "S24009215",
+      "nrc": "10001",
+      "calificacion": 8.5
+    },
+    {
+      "id": "117",
+      "matricula": "S24009215",
+      "nrc": "30005",
+      "calificacion": 7.5
+    },
+    {
+      "id": "118",
+      "matricula": "S24009215",
+      "nrc": "10004",
+      "calificacion": 9
+    },
+    {
+      "id": "119",
+      "matricula": "S24009215",
+      "nrc": "50001",
+      "calificacion": 10
+    },
+    {
+      "id": "120",
+      "matricula": "S24009215",
+      "nrc": "50002",
+      "calificacion": 8.5
+    },
+    {
+      "id": "121",
+      "matricula": "S24009215",
+      "nrc": "50003",
+      "calificacion": 9.5
+    },
+    {
+      "id": "122",
+      "matricula": "S24009215",
+      "nrc": "10005",
+      "calificacion": 8
+    },
+    {
+      "id": "123",
+      "matricula": "S24009215",
+      "nrc": "50004",
+      "calificacion": 7
+    },
+    {
+      "id": "124",
+      "matricula": "S24009215",
+      "nrc": "50005",
+      "calificacion": 8.5
+    },
+    {
+      "id": "125",
+      "matricula": "S24009215",
+      "nrc": "10002",
+      "calificacion": 10
+    },
+    {
+      "id": "126",
+      "matricula": "S24009215",
+      "nrc": "50006",
+      "calificacion": 9
+    },
+    {
+      "id": "127",
+      "matricula": "S24009215",
+      "nrc": "50007",
+      "calificacion": 8.5
+    },
+    {
+      "id": "128",
+      "matricula": "S24009215",
+      "nrc": "50008",
+      "calificacion": 8
+    },
+    {
+      "id": "129",
+      "matricula": "S24009215",
+      "nrc": "50009",
+      "calificacion": 8.5
+    },
+    {
+      "id": "130",
+      "matricula": "S24009215",
+      "nrc": "50010",
+      "calificacion": 9
+    },
+    {
+      "id": "131",
+      "matricula": "S24009215",
+      "nrc": "50011",
+      "calificacion": 8.5
+    },
+    {
+      "id": "132",
+      "matricula": "S24009215",
+      "nrc": "50012",
+      "calificacion": 9
+    },
+    {
+      "id": "133",
+      "matricula": "S24009215",
+      "nrc": "50013",
+      "calificacion": 9.5
+    },
+    {
+      "id": "134",
+      "matricula": "S24009215",
+      "nrc": "50014",
+      "calificacion": 8
+    },
+    {
+      "id": "135",
+      "matricula": "S24009215",
+      "nrc": "50015",
+      "calificacion": 7.5
+    },
+    {
+      "id": "136",
+      "matricula": "S24009215",
+      "nrc": "50016",
+      "calificacion": 9
+    },
+    {
+      "id": "137",
+      "matricula": "S24009215",
+      "nrc": "50017",
+      "calificacion": 9.5
+    },
+    {
+      "id": "138",
+      "matricula": "S24009215",
+      "nrc": "50018",
+      "calificacion": 8.5
+    },
+    {
+      "id": "139",
+      "matricula": "S24009215",
+      "nrc": "50019",
+      "calificacion": 8
+    },
+    {
+      "id": "140",
+      "matricula": "S24009215",
+      "nrc": "50020",
+      "calificacion": 9
+    },
+    {
+      "id": "141",
+      "matricula": "S24009215",
+      "nrc": "50021",
+      "calificacion": 9
+    },
+    {
+      "id": "142",
+      "matricula": "S24009215",
+      "nrc": "50022",
+      "calificacion": 9.5
+    },
+    {
+      "id": "143",
+      "matricula": "S24009215",
+      "nrc": "50023",
+      "calificacion": 8.5
+    },
+    {
+      "id": "144",
+      "matricula": "S24009215",
+      "nrc": "50024",
+      "calificacion": 9
+    },
+    {
+      "id": "145",
+      "matricula": "S24009215",
+      "nrc": "50025",
+      "calificacion": 8.5
+    },
+    {
+      "id": "146",
+      "matricula": "S24009215",
+      "nrc": "50026",
+      "calificacion": 9.5
+    },
+    {
+      "id": "147",
+      "matricula": "S25012053",
+      "nrc": "10001",
+      "calificacion": 9
+    },
+    {
+      "id": "148",
+      "matricula": "S25012053",
+      "nrc": "40001",
+      "calificacion": 9.5
+    },
+    {
+      "id": "149",
+      "matricula": "S25012053",
+      "nrc": "40002",
+      "calificacion": 10
+    },
+    {
+      "id": "150",
+      "matricula": "S25012053",
+      "nrc": "40003",
+      "calificacion": 7.5
+    },
+    {
+      "id": "151",
+      "matricula": "S25012053",
+      "nrc": "40004",
+      "calificacion": 8.5
+    },
+    {
+      "id": "152",
+      "matricula": "S25012053",
+      "nrc": "10004",
+      "calificacion": 9
+    },
+    {
+      "id": "153",
+      "matricula": "S25012053",
+      "nrc": "10005",
+      "calificacion": 8.5
+    },
+    {
+      "id": "154",
+      "matricula": "S25012053",
+      "nrc": "10007",
+      "calificacion": 9.5
+    },
+    {
+      "id": "155",
+      "matricula": "S25012053",
+      "nrc": "40005",
+      "calificacion": 8
+    },
+    {
+      "id": "156",
+      "matricula": "S25012053",
+      "nrc": "40006",
+      "calificacion": 7
+    },
+    {
+      "id": "157",
+      "matricula": "S25012053",
+      "nrc": "40007",
+      "calificacion": 8.5
+    },
+    {
+      "id": "158",
+      "matricula": "S25012053",
+      "nrc": "10003",
+      "calificacion": 9.5
+    },
+    {
+      "id": "159",
+      "matricula": "S25012053",
+      "nrc": "40008",
+      "calificacion": 9.5
+    },
+    {
+      "id": "160",
+      "matricula": "S25012053",
+      "nrc": "40009",
+      "calificacion": 9
+    },
+    {
+      "id": "161",
+      "matricula": "S25012053",
+      "nrc": "40010",
+      "calificacion": 9.5
+    },
+    {
+      "id": "162",
+      "matricula": "S25012053",
+      "nrc": "40011",
+      "calificacion": 8.5
+    },
+    {
+      "id": "163",
+      "matricula": "S25012053",
+      "nrc": "40012",
+      "calificacion": 8
+    },
+    {
+      "id": "164",
+      "matricula": "S25012053",
+      "nrc": "10002",
+      "calificacion": 10
+    },
+    {
+      "id": "165",
+      "matricula": "S25014829",
+      "nrc": "10001",
+      "calificacion": 8.5
+    },
+    {
+      "id": "166",
+      "matricula": "S25014829",
+      "nrc": "10002",
+      "calificacion": 10
+    },
+    {
+      "id": "167",
+      "matricula": "S25014829",
+      "nrc": "30001",
+      "calificacion": 7.5
+    },
+    {
+      "id": "168",
+      "matricula": "S25014829",
+      "nrc": "30002",
+      "calificacion": 9
+    },
+    {
+      "id": "169",
+      "matricula": "S25014829",
+      "nrc": "10003",
+      "calificacion": 9
+    },
+    {
+      "id": "170",
+      "matricula": "S25014829",
+      "nrc": "30003",
+      "calificacion": 9.5
+    },
+    {
+      "id": "171",
+      "matricula": "S25014829",
+      "nrc": "10004",
+      "calificacion": 8.5
+    },
+    {
+      "id": "172",
+      "matricula": "S25014829",
+      "nrc": "10005",
+      "calificacion": 9
+    },
+    {
+      "id": "173",
+      "matricula": "S25014829",
+      "nrc": "30004",
+      "calificacion": 7
+    },
+    {
+      "id": "174",
+      "matricula": "S25014829",
+      "nrc": "30005",
+      "calificacion": 8
+    },
+    {
+      "id": "175",
+      "matricula": "S25014829",
+      "nrc": "30006",
+      "calificacion": 8.5
+    },
+    {
+      "id": "176",
+      "matricula": "S25014829",
+      "nrc": "30008",
+      "calificacion": 9.5
+    },
+    {
+      "id": "177",
+      "matricula": "S25014829",
+      "nrc": "30007",
+      "calificacion": 8.5
+    },
+    {
+      "id": "178",
+      "matricula": "S25014829",
+      "nrc": "30009",
+      "calificacion": 8.5
+    },
+    {
+      "id": "179",
+      "matricula": "S25014829",
+      "nrc": "30010",
+      "calificacion": 8
+    },
+    {
+      "id": "180",
+      "matricula": "S25014829",
+      "nrc": "30011",
+      "calificacion": 9
+    },
+    {
+      "id": "181",
+      "matricula": "S25014829",
+      "nrc": "30012",
+      "calificacion": 10
+    },
+    {
+      "id": "182",
+      "matricula": "S25014829",
+      "nrc": "30013",
+      "calificacion": 9
+    },
+    {
+      "id": "183",
+      "matricula": "S26003921",
+      "nrc": "10001",
+      "calificacion": 9
+    },
+    {
+      "id": "184",
+      "matricula": "S26003921",
+      "nrc": "10002",
+      "calificacion": 10
+    },
+    {
+      "id": "185",
+      "matricula": "S26003921",
+      "nrc": "10003",
+      "calificacion": 9
+    },
+    {
+      "id": "186",
+      "matricula": "S26003921",
+      "nrc": "10004",
+      "calificacion": 8.5
+    },
+    {
+      "id": "187",
+      "matricula": "S26003921",
+      "nrc": "20001",
+      "calificacion": 7.5
+    },
+    {
+      "id": "188",
+      "matricula": "S26003921",
+      "nrc": "20002",
+      "calificacion": 9.5
+    },
+    {
+      "id": "189",
+      "matricula": "S26003921",
+      "nrc": "20003",
+      "calificacion": 8
+    },
+    {
+      "id": "190",
+      "matricula": "S26018240",
+      "nrc": "10003",
+      "calificacion": 8.5
+    },
+    {
+      "id": "191",
+      "matricula": "S26018240",
+      "nrc": "10001",
+      "calificacion": 9
+    },
+    {
+      "id": "192",
+      "matricula": "S26018240",
+      "nrc": "30005",
+      "calificacion": 7.5
+    },
+    {
+      "id": "193",
+      "matricula": "S26018240",
+      "nrc": "10004",
+      "calificacion": 8
+    },
+    {
+      "id": "194",
+      "matricula": "S26018240",
+      "nrc": "50001",
+      "calificacion": 9.5
+    },
+    {
+      "id": "195",
+      "matricula": "S26018240",
+      "nrc": "50002",
+      "calificacion": 8
+    },
+    {
+      "id": "196",
+      "matricula": "S26018240",
+      "nrc": "50003",
+      "calificacion": 9
+    },
+    {
+      "id": "197",
+      "matricula": "S26007365",
+      "nrc": "10001",
+      "calificacion": 9
+    },
+    {
+      "id": "198",
+      "matricula": "S26007365",
+      "nrc": "40001",
+      "calificacion": 9.5
+    },
+    {
+      "id": "199",
+      "matricula": "S26007365",
+      "nrc": "40002",
+      "calificacion": 9
+    },
+    {
+      "id": "200",
+      "matricula": "S26007365",
+      "nrc": "40003",
+      "calificacion": 8.5
+    },
+    {
+      "id": "201",
+      "matricula": "S26007365",
+      "nrc": "40004",
+      "calificacion": 9
+    },
+    {
+      "id": "202",
+      "matricula": "S26007365",
+      "nrc": "10004",
+      "calificacion": 9.5
+    }
   ]
 }

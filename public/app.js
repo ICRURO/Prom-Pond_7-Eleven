@@ -1,37 +1,24 @@
 let studentsData = [];
-let catalogData = [];
 let activeStudentMatricula = null;
-let activeEEId = null;
+let activeEditStudentMatricula = null;
 
 document.addEventListener('DOMContentLoaded', () => {
-    initApp();
+    loadStudents();
     setupForms();
 });
-
-async function initApp() {
-    await loadCatalog();
-    await loadStudents();
-}
 
 function showSection(sectionId) {
     document.querySelectorAll('.view-section').forEach(sec => sec.classList.add('hidden'));
     const target = document.getElementById(sectionId);
     if (target) target.classList.remove('hidden');
-    if (sectionId === 'lista-estudiantes' || sectionId === 'modificar-alumno') {
+    if (sectionId === 'lista-estudiantes') {
         loadStudents();
     }
-    if (sectionId === 'modificar-ee') {
-        renderModEEList();
+    if (sectionId === 'modificar-alumno') {
+        renderModifyStudentsTable();
     }
-}
-
-// CRUD
-async function loadCatalog() {
-    try {
-        const res = await fetch('/api/materias');
-        catalogData = await res.json();
-    } catch (err) {
-        console.error('Error al cargar catálogo:', err);
+    if (sectionId === 'modificar-ee') {
+        renderStudentSelectionList();
     }
 }
 
@@ -42,11 +29,10 @@ async function loadStudents() {
         renderStudentsTable();
         renderModifyStudentsTable();
     } catch (err) {
-        console.error('Error al cargar estudiantes:', err);
+        console.error('Error al cargar datos:', err);
     }
 }
 
-// lista estudiantes
 function renderStudentsTable() {
     const tbody = document.getElementById('tbody-estudiantes');
     if (!tbody) return;
@@ -65,83 +51,66 @@ function renderStudentsTable() {
             document.querySelectorAll('#tbody-estudiantes tr').forEach(r => r.classList.remove('selected'));
             tr.classList.add('selected');
             activeStudentMatricula = est.matricula;
-            document.getElementById('selected-matricula').value = `${est.matricula} - ${est.nombre}`;
+            
+            const selInput = document.getElementById('selected-matricula');
+            if (selInput) selInput.value = `${est.matricula} - ${est.nombre}`;
         };
         tbody.appendChild(tr);
     });
 }
 
-// calcular promedio
 async function abrirPromedio() {
     if (!activeStudentMatricula) {
-        alert('Por favor selecciona un estudiante de la lista haciendo clic en su fila.');
+        alert('Por favor selecciona un estudiante en la tabla.');
+        return;
+    }
+    try {
+        const res = await fetch(`/api/estudiantes/${encodeURIComponent(activeStudentMatricula)}/kardex`);
+        if (!res.ok) throw new Error('No se pudo obtener el kardex');
+        const data = await res.json();
+        document.getElementById('prom-nombre').textContent = data.estudiante.nombre;
+        document.getElementById('prom-carrera').textContent = data.estudiante.carrera;
+        const tbody = document.getElementById('tbody-materias');
+        tbody.innerHTML = '';
+        let totalCreditos = 0;
+        let sumaPonderada = 0;
+        data.materias.forEach(m => {
+            const creditos = parseFloat(m.creditos) || 0;
+            const esAC = String(m.calificacion).toUpperCase() === 'AC';
+            const califNum = esAC ? 10.0 : (parseFloat(m.calificacion) || 0);
+            totalCreditos += creditos;
+            sumaPonderada += creditos * califNum;
+            tbody.innerHTML += `
+                <tr>
+                    <td>${m.nombre}</td>
+                    <td>${m.creditos}</td>
+                    <td>${esAC ? 'AC (10.0)' : califNum.toFixed(1)}</td>
+                </tr>
+            `;
+        });
+        const promedio = totalCreditos > 0 ? (sumaPonderada / totalCreditos).toFixed(2) : '0.00';
+        document.getElementById('total-creditos').textContent = totalCreditos;
+        document.getElementById('total-ee').textContent = data.materias.length;
+        document.getElementById('promedio-final').textContent = promedio;
+        showSection('detalle-promedio');
+    } catch (err) {
+        alert('Error al calcular promedio ponderado.');
+        console.error(err);
+    }
+}
+
+function abrirAgregarEE() {
+    if (!activeStudentMatricula) {
+        alert('Por favor selecciona un estudiante en la tabla.');
         return;
     }
     const est = studentsData.find(e => e.matricula === activeStudentMatricula);
-    if (!est) return;
-    await loadCatalog(); 
-    document.getElementById('prom-nombre').textContent = est.nombre;
-    document.getElementById('prom-carrera').textContent = est.carrera;
-    const tbody = document.getElementById('tbody-materias');
-    tbody.innerHTML = '';
-    let totalCreditos = 0;
-    let sumaPonderada = 0;
-    let totalMateriasValidas = 0;
-    catalogData.forEach(m => {
-        const califNum = parseFloat(m.calificacion);
-        const esValida = !isNaN(califNum) && m.calificacion !== 'AC';
-        if (esValida) {
-            totalCreditos += parseFloat(m.creditos) || 0;
-            sumaPonderada += (parseFloat(m.creditos) || 0) * califNum;
-            totalMateriasValidas++;
-        }
-        tbody.innerHTML += `
-            <tr>
-                <td>${m.nombre}</td>
-                <td>${m.creditos}</td>
-                <td>${esValida ? califNum.toFixed(1) : m.calificacion}</td>
-            </tr>
-        `;
-    });
-    const promedio = totalCreditos > 0 ? (sumaPonderada / totalCreditos).toFixed(2) : '0.00';
-    document.getElementById('total-creditos').textContent = totalCreditos;
-    document.getElementById('total-ee').textContent = catalogData.length;
-    document.getElementById('promedio-final').textContent = promedio;
-    showSection('detalle-promedio');
-}
-
-// EE
-function abrirAgregarEE() {
+    const info = document.getElementById('ee-student-info');
+    if (info) info.textContent = `Estudiante: ${est.nombre} (${est.matricula})`;
     showSection('registro-ee');
 }
 
-function renderModEEList() {
-    const tbody = document.getElementById('tbody-mod-ee');
-    if (!tbody) return;
-    tbody.innerHTML = '';
-    catalogData.forEach(m => {
-        const tr = document.createElement('tr');
-        tr.className = 'clickable-row';
-        tr.innerHTML = `
-            <td>${m.nombre}</td>
-            <td>${m.creditos}</td>
-            <td>${m.calificacion}</td>
-        `;
-        tr.onclick = () => {
-            document.querySelectorAll('#tbody-mod-ee tr').forEach(r => r.classList.remove('selected'));
-            tr.classList.add('selected');
-            activeEEId = m.id;
-            document.getElementById('edit-ee-id').value = m.id;
-            document.getElementById('edit-ee-nombre').value = m.nombre;
-            document.getElementById('edit-ee-creditos').value = m.creditos;
-            document.getElementById('edit-ee-calificacion').value = m.calificacion;
-        };
-        tbody.appendChild(tr);
-    });
-}
-
 function setupForms() {
-    // nuevo estudiante
     const formEst = document.getElementById('form-estudiante');
     if (formEst) {
         formEst.addEventListener('submit', async (e) => {
@@ -158,29 +127,28 @@ function setupForms() {
                 body: JSON.stringify(payload)
             });
             if (res.ok) {
-                alert('Estudiante registrado correctamente.');
+                alert('Estudiante registrado con éxito.');
                 formEst.reset();
                 await loadStudents();
                 showSection('lista-estudiantes');
             } else {
                 const data = await res.json();
-                alert(data.error || 'Error al guardar.');
+                alert(data.error || 'Error al guardar');
             }
         });
     }
 
-    // nueva EE
     const formEE = document.getElementById('form-ee');
     if (formEE) {
         formEE.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const califVal = document.getElementById('ee-calificacion').value.trim();
+            if (!activeStudentMatricula) return alert('No hay estudiante seleccionado.');
             const payload = {
                 nombre: document.getElementById('ee-nombre').value.trim(),
                 creditos: document.getElementById('ee-creditos').value.trim(),
-                calificacion: califVal.toUpperCase() === 'AC' ? 'AC' : califVal
+                calificacion: document.getElementById('ee-calificacion').value.trim()
             };
-            const res = await fetch('/api/materias', {
+            const res = await fetch(`/api/estudiantes/${encodeURIComponent(activeStudentMatricula)}/kardex`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -188,60 +156,105 @@ function setupForms() {
             if (res.ok) {
                 alert('Experiencia Educativa guardada.');
                 formEE.reset();
-                await loadCatalog();
-                showSection('lista-estudiantes');
+                abrirPromedio();
             }
         });
     }
 
-    // modificar EE
     const formEditEE = document.getElementById('form-edit-ee');
     if (formEditEE) {
         formEditEE.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const id = document.getElementById('edit-ee-id').value;
-            if (!id) return alert('Selecciona una materia de la tabla.');
-            const califVal = document.getElementById('edit-ee-calificacion').value.trim();
+            const idInscripcion = document.getElementById('edit-ee-id').value;
+            if (!idInscripcion) return alert('Selecciona una materia de la tabla.');
             const payload = {
                 nombre: document.getElementById('edit-ee-nombre').value.trim(),
                 creditos: document.getElementById('edit-ee-creditos').value.trim(),
-                calificacion: califVal.toUpperCase() === 'AC' ? 'AC' : califVal
+                calificacion: document.getElementById('edit-ee-calificacion').value.trim()
             };
-            const res = await fetch(`/api/materias/${id}`, {
+            const res = await fetch(`/api/inscripciones/${encodeURIComponent(idInscripcion)}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
             if (res.ok) {
-                alert('Experiencia Educativa modificada correctamente.');
-                await loadCatalog();
-                renderModEEList();
+                alert('Materia actualizada con éxito.');
+                await cargarEEDeEstudiante(activeEditStudentMatricula);
+            } else {
+                alert('Error al modificar materia.');
             }
         });
     }
 
-    // modificar Alumno
     const formEditAlumno = document.getElementById('form-edit-alumno');
     if (formEditAlumno) {
         formEditAlumno.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const matricula = document.getElementById('edit-original-matricula').value;
+            const matricula = document.getElementById('edit-original-matricula').value.trim();
             if (!matricula) return alert('Selecciona un alumno de la tabla.');
+            const semInput = document.getElementById('edit-alumno-semestre');
             const payload = {
                 nombre: document.getElementById('edit-alumno-nombre').value.trim(),
                 carrera: document.getElementById('edit-alumno-carrera').value.trim(),
-                semestre: document.getElementById('edit-alumno-semestre').value.trim()
+                semestre: semInput ? semInput.value.trim() : undefined
             };
-            const res = await fetch(`/api/estudiantes/${matricula}`, {
+            const res = await fetch(`/api/estudiantes/${encodeURIComponent(matricula)}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
             if (res.ok) {
-                alert('Datos del alumno actualizados.');
+                alert('Datos del alumno actualizados en la base de datos.');
                 await loadStudents();
+                renderModifyStudentsTable();
+            } else {
+                alert('Error al actualizar datos del alumno.');
             }
         });
+    }
+}
+
+function renderStudentSelectionList() {
+    const container = document.getElementById('list-students-ee');
+    if (!container) return;
+    container.innerHTML = '';
+    studentsData.forEach(est => {
+        const div = document.createElement('div');
+        div.className = 'selection-item';
+        div.textContent = est.nombre;
+        div.onclick = () => {
+            document.querySelectorAll('.selection-item').forEach(i => i.classList.remove('active'));
+            div.classList.add('active');
+            activeEditStudentMatricula = est.matricula;
+            cargarEEDeEstudiante(est.matricula);
+        };
+        container.appendChild(div);
+    });
+}
+
+async function cargarEEDeEstudiante(matricula) {
+    try {
+        const res = await fetch(`/api/estudiantes/${encodeURIComponent(matricula)}/kardex`);
+        const data = await res.json();
+        const tbody = document.getElementById('tbody-mod-ee');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+        data.materias.forEach(m => {
+            const tr = document.createElement('tr');
+            tr.className = 'clickable-row';
+            tr.innerHTML = `<td>${m.nombre}</td><td>${m.creditos}</td><td>${m.calificacion}</td>`;
+            tr.onclick = () => {
+                document.querySelectorAll('#tbody-mod-ee tr').forEach(r => r.classList.remove('selected'));
+                tr.classList.add('selected');
+                document.getElementById('edit-ee-id').value = m.id_inscripcion;
+                document.getElementById('edit-ee-nombre').value = m.nombre;
+                document.getElementById('edit-ee-creditos').value = m.creditos;
+                document.getElementById('edit-ee-calificacion').value = m.calificacion;
+            };
+            tbody.appendChild(tr);
+        });
+    } catch (err) {
+        console.error('Error al cargar materias:', err);
     }
 }
 
@@ -252,18 +265,15 @@ function renderModifyStudentsTable() {
     studentsData.forEach(est => {
         const tr = document.createElement('tr');
         tr.className = 'clickable-row';
-        tr.innerHTML = `
-            <td>${est.nombre}</td>
-            <td>${est.carrera}</td>
-            <td>${est.matricula}</td>
-        `;
+        tr.innerHTML = `<td>${est.nombre}</td><td>${est.carrera}</td><td>${est.matricula}</td>`;
         tr.onclick = () => {
             document.querySelectorAll('#tbody-mod-alumnos tr').forEach(r => r.classList.remove('selected'));
             tr.classList.add('selected');
             document.getElementById('edit-original-matricula').value = est.matricula;
             document.getElementById('edit-alumno-nombre').value = est.nombre;
             document.getElementById('edit-alumno-carrera').value = est.carrera;
-            document.getElementById('edit-alumno-semestre').value = est.semestre;
+            const semInput = document.getElementById('edit-alumno-semestre');
+            if (semInput) semInput.value = est.semestre || '';
         };
         tbody.appendChild(tr);
     });
@@ -272,28 +282,29 @@ function renderModifyStudentsTable() {
 async function abrirEliminarEstudiante() {
     const matricula = prompt('Ingresa la matrícula del estudiante a eliminar:');
     if (!matricula) return;
-
-    const res = await fetch(`/api/estudiantes/${matricula.trim()}`, { method: 'DELETE' });
+    const res = await fetch(`/api/estudiantes/${encodeURIComponent(matricula.trim())}`, { method: 'DELETE' });
     if (res.ok) {
         alert('Estudiante eliminado.');
         await loadStudents();
-        showSection('lista-estudiantes');
     } else {
-        alert('No se encontró al estudiante.');
+        alert('Estudiante no encontrado.');
     }
 }
 
 async function abrirEliminarEE() {
-    if (catalogData.length === 0) return alert('No hay EE registradas.');
-    const listaStr = catalogData.map((m, i) => `${i + 1}. ${m.nombre} (ID: ${m.id})`).join('\n');
-    const seleccion = prompt(`Ingresa el número de la materia a eliminar:\n\n${listaStr}`);
+    const matricula = prompt('Ingresa la matrícula del estudiante:');
+    if (!matricula) return;
+    const res = await fetch(`/api/estudiantes/${encodeURIComponent(matricula.trim())}/kardex`);
+    if (!res.ok) return alert('Estudiante no encontrado.');
+    const data = await res.json();
+    if (data.materias.length === 0) return alert('El estudiante no tiene materias cursadas.');
+    const lista = data.materias.map((m, idx) => `${idx + 1}. [NRC: ${m.nrc}] ${m.nombre}`).join('\n');
+    const seleccion = prompt(`Selecciona el número de la materia a eliminar:\n\n${lista}`);
     const index = parseInt(seleccion) - 1;
-    if (catalogData[index]) {
-        const res = await fetch(`/api/materias/${catalogData[index].id}`, { method: 'DELETE' });
-        if (res.ok) {
+    if (data.materias[index]) {
+        const resDel = await fetch(`/api/inscripciones/${encodeURIComponent(data.materias[index].id_inscripcion)}`, { method: 'DELETE' });
+        if (resDel.ok) {
             alert('Experiencia Educativa eliminada.');
-            await loadCatalog();
-            showSection('lista-estudiantes');
         }
     }
 }
