@@ -1,0 +1,17 @@
+{
+  "source": {
+    "include": [
+      "server.js", 
+      "public/app.js",
+      "models.js" 
+    ],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "opts": {
+    "encoding": "utf8",
+    "destination": "./docs",
+    "recurse": true,
+    "readme": "README.md"
+  }
+}
