@@ -74,7 +74,7 @@
         <section id="lista-estudiantes" class="view-section hidden">
             <h1 class="main-title"><span class="blue">LISTA DE</span> <span class="green">ESTUDIANTES</span></h1>
             <div style="margin-bottom: 1rem; display: flex; justify-content: center;">
-                <input type="text" id="search-estudiantes" placeholder="🔍 Buscar por nombre o matrícula..." style="width: 100%; max-width: 450px; padding: 0.6rem; border: 2px solid var(--uv-blue); border-radius: 6px; font-size: 1rem;">
+                <input type="text" id="search-estudiantes" placeholder="Buscar por nombre o matrícula..." style="width: 100%; max-width: 450px; padding: 0.6rem; border: 2px solid var(--uv-blue); border-radius: 6px; font-size: 1rem;">
             </div>
             <table class="custom-table" id="tabla-estudiantes">
                 <thead>
@@ -96,6 +96,7 @@
                     <h3 class="green">ELIGE UNA OPCIÓN</h3>
                     <button class="btn-blue" onclick="abrirPromedio()">CALCULAR PROMEDIO PONDERADO</button>
                     <button class="btn-green" onclick="abrirAgregarEE()">AÑADIR EE</button>
+                    <button class="btn-blue" onclick="abrirQuitarEE()">QUITAR EE</button>
                 </div>
             </div>
         </section>
@@ -156,27 +157,47 @@
             </div>
         </section>
         <section id="registro-ee" class="view-section hidden">
-            <h1 class="main-title"><span class="green">REGISTRO DE</span> <span class="blue">EE</span></h1>
-            <p id="ee-student-info" class="bold center"></p>
+            <h1 class="main-title"><span class="green">AÑADIR EE AL</span> <span class="blue">ESTUDIANTE</span></h1>
+            <p id="ee-student-info" class="bold center" style="color: var(--uv-blue); margin-bottom: 1.5rem;"></p>
             <form id="form-ee" class="form-container">
                 <div class="form-group">
-                    <label>NRC (Opcional):</label>
-                    <input type="text" id="ee-nrc" placeholder="Ej. 10001">
+                    <label>Seleccionar EE:</label>
+                    <select id="ee-select-materia" required style="width: 55%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 6px;">
+                        <option value="">-- Selecciona una EE --</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label>NOMBRE:</label>
-                    <input type="text" id="ee-nombre" required>
+                    <label>NRC:</label>
+                    <input type="text" id="ee-nrc" readonly style="background-color: #f1f5f9;">
                 </div>
                 <div class="form-group">
-                    <label>CRÉDITOS:</label>
-                    <input type="number" id="ee-creditos" step="1" min="1" required>
+                    <label>Créditos:</label>
+                    <input type="number" id="ee-creditos" readonly style="background-color: #f1f5f9;">
                 </div>
                 <div class="form-group">
-                    <label>CALIFICACIÓN:</label>
+                    <label>Calificación:</label>
                     <input type="text" id="ee-calificacion" placeholder="Ej. 9.5 o AC" required>
                 </div>
-                <button type="submit" class="btn-save">GUARDAR</button>
+                <button type="submit" class="btn-save">AGREGAR AL HISTORIAL</button>
             </form>
+        </section>
+        <section id="quitar-ee" class="view-section hidden">
+            <h1 class="main-title"><span class="blue">QUITAR EE DEL</span> <span class="green">ESTUDIANTE</span></h1>
+            <p id="remove-ee-student-info" class="bold center" style="color: var(--uv-blue); margin-bottom: 1.5rem;"></p>
+            <div style="max-height: 380px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 6px; margin-bottom: 1.5rem;">
+                <table class="custom-table-blue" style="margin: 0;">
+                    <thead>
+                        <tr>
+                            <th>NRC</th>
+                            <th>EXPERIENCIA EDUCATIVA</th>
+                            <th>CRÉDITOS</th>
+                            <th>CALIFICACIÓN</th>
+                            <th>ACCIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-quitar-ee"></tbody>
+                </table>
+            </div>
         </section>
         <section id="menu-modificar" class="view-section hidden">
             <h1 class="main-title"><span class="blue">ELIGE LO QUE SE DESEA</span> <span class="green">MODIFICAR</span></h1>

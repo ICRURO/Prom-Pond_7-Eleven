@@ -147,24 +147,23 @@ app.get('/api/estudiantes/:matricula/kardex', (req, res) => {
 
 app.post('/api/estudiantes/:matricula/kardex', (req, res) => {
     const matriculaParam = req.params.matricula.trim().toUpperCase();
-    const { nrc, nombre, creditos, calificacion } = req.body;
+    const { nrc, calificacion } = req.body;
     const db = readDB();
-    let nrcFinal = nrc ? String(nrc).trim() : '';
-    let materiaExistente = db.experiencias_educativas.find(e => String(e.nrc) === nrcFinal);
-    if (!materiaExistente) {
-        if (!nrcFinal) nrcFinal = String(Math.floor(10000 + Math.random() * 90000));
-        materiaExistente = {
-            nrc: nrcFinal,
-            nombre: nombre.trim(),
-            carrera: "GENERAL",
-            creditos: parseFloat(creditos) || 0
-        };
-        db.experiencias_educativas.push(materiaExistente);
+    const nrcLimpio = String(nrc).trim();
+    const ee = db.experiencias_educativas.find(e => String(e.nrc) === nrcLimpio);
+    if (!ee) {
+        return res.status(404).json({ error: 'La materia seleccionada no existe en el catálogo.' });
+    }
+    const yaInscrita = db.inscripciones.some(
+        i => i.matricula.trim().toUpperCase() === matriculaParam && String(i.nrc) === nrcLimpio
+    );
+    if (yaInscrita) {
+        return res.status(400).json({ error: 'El estudiante ya tiene cursada o inscrita esta materia.' });
     }
     const nuevaInscripcion = {
         id: String(Date.now()),
         matricula: matriculaParam,
-        nrc: materiaExistente.nrc,
+        nrc: nrcLimpio,
         calificacion: calificacion.toString().toUpperCase() === 'AC' ? 'AC' : parseFloat(calificacion)
     };
     db.inscripciones.push(nuevaInscripcion);
