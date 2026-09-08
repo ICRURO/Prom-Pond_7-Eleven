@@ -42,7 +42,12 @@ app.post('/api/estudiantes', (req, res) => {
     if (db.estudiantes.some(e => e.matricula.trim().toUpperCase() === matricula.trim().toUpperCase())) {
         return res.status(400).json({ error: 'La matrícula ya existe.' });
     }
-    const nuevo = { matricula: matricula.trim().toUpperCase(), nombre: nombre.trim(), carrera: carrera.trim(), semestre: (semestre || '').trim() };
+    const nuevo = {
+        matricula: matricula.trim().toUpperCase(),
+        nombre: nombre.trim(),
+        carrera: carrera.trim(),
+        semestre: (semestre || '').trim()
+    };
     db.estudiantes.push(nuevo);
     writeDB(db);
     res.status(201).json(nuevo);
@@ -72,6 +77,54 @@ app.delete('/api/estudiantes/:matricula', (req, res) => {
     res.json({ success: true });
 });
 
+app.get('/api/materias', (req, res) => {
+    const db = readDB();
+    res.json(db.experiencias_educativas || []);
+});
+
+app.post('/api/materias', (req, res) => {
+    const { nrc, nombre, carrera, creditos } = req.body;
+    const db = readDB();
+    const nrcLimpio = String(nrc).trim();
+    if (!nrcLimpio || !nombre || creditos === undefined) {
+        return res.status(400).json({ error: 'NRC, nombre y créditos son requeridos.' });
+    }
+    if (db.experiencias_educativas.some(e => String(e.nrc) === nrcLimpio)) {
+        return res.status(400).json({ error: 'El NRC ya existe en el catálogo.' });
+    }
+    const nuevaEE = {
+        nrc: nrcLimpio,
+        nombre: nombre.trim(),
+        carrera: carrera ? carrera.trim().toUpperCase() : 'GENERAL',
+        creditos: parseFloat(creditos)
+    };
+    db.experiencias_educativas.push(nuevaEE);
+    writeDB(db);
+    res.status(201).json(nuevaEE);
+});
+
+app.put('/api/materias/:nrc', (req, res) => {
+    const nrcParam = String(req.params.nrc).trim();
+    const { nombre, carrera, creditos } = req.body;
+    const db = readDB();
+    const ee = db.experiencias_educativas.find(e => String(e.nrc) === nrcParam);
+    if (!ee) return res.status(404).json({ error: 'Experiencia Educativa no encontrada.' });
+    if (nombre) ee.nombre = nombre.trim();
+    if (carrera) ee.carrera = carrera.trim().toUpperCase();
+    if (creditos !== undefined) ee.creditos = parseFloat(creditos);
+    writeDB(db);
+    res.json({ success: true, ee });
+});
+
+app.delete('/api/materias/:nrc', (req, res) => {
+    const nrcParam = String(req.params.nrc).trim();
+    let db = readDB();
+    db.experiencias_educativas = db.experiencias_educativas.filter(e => String(e.nrc) !== nrcParam);
+    db.inscripciones = db.inscripciones.filter(i => String(i.nrc) !== nrcParam);
+    writeDB(db);
+    res.json({ success: true });
+});
+
 app.get('/api/estudiantes/:matricula/kardex', (req, res) => {
     const matriculaParam = req.params.matricula.trim().toUpperCase();
     const db = readDB();
@@ -96,9 +149,10 @@ app.post('/api/estudiantes/:matricula/kardex', (req, res) => {
     const matriculaParam = req.params.matricula.trim().toUpperCase();
     const { nrc, nombre, creditos, calificacion } = req.body;
     const db = readDB();
-    const nrcFinal = nrc ? String(nrc).trim() : String(Math.floor(10000 + Math.random() * 90000));
+    let nrcFinal = nrc ? String(nrc).trim() : '';
     let materiaExistente = db.experiencias_educativas.find(e => String(e.nrc) === nrcFinal);
     if (!materiaExistente) {
+        if (!nrcFinal) nrcFinal = String(Math.floor(10000 + Math.random() * 90000));
         materiaExistente = {
             nrc: nrcFinal,
             nombre: nombre.trim(),
@@ -110,30 +164,12 @@ app.post('/api/estudiantes/:matricula/kardex', (req, res) => {
     const nuevaInscripcion = {
         id: String(Date.now()),
         matricula: matriculaParam,
-        nrc: nrcFinal,
+        nrc: materiaExistente.nrc,
         calificacion: calificacion.toString().toUpperCase() === 'AC' ? 'AC' : parseFloat(calificacion)
     };
     db.inscripciones.push(nuevaInscripcion);
     writeDB(db);
     res.status(201).json(nuevaInscripcion);
-});
-
-app.put('/api/inscripciones/:id', (req, res) => {
-    const idParam = String(req.params.id);
-    const { nombre, creditos, calificacion } = req.body;
-    const db = readDB();
-    const inscripcion = db.inscripciones.find(i => String(i.id) === idParam);
-    if (!inscripcion) return res.status(404).json({ error: 'Inscripción no encontrada.' });
-    if (calificacion !== undefined) {
-        inscripcion.calificacion = calificacion.toString().toUpperCase() === 'AC' ? 'AC' : parseFloat(calificacion);
-    }
-    const ee = db.experiencias_educativas.find(e => String(e.nrc) === String(inscripcion.nrc));
-    if (ee) {
-        if (nombre) ee.nombre = nombre.trim();
-        if (creditos !== undefined) ee.creditos = parseFloat(creditos);
-    }
-    writeDB(db);
-    res.json({ success: true });
 });
 
 app.delete('/api/inscripciones/:id', (req, res) => {
@@ -145,5 +181,5 @@ app.delete('/api/inscripciones/:id', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Sistema Halcón Ponderado activo en http://localhost:${PORT}`);
+    console.log(`http://localhost:${PORT}`);
 });
