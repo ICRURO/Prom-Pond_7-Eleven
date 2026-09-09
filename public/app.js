@@ -1,4 +1,13 @@
+/**
+ * Arreglo global que almacena los datos de los estudiantes cargados desde el servidor.
+ * @type {Estudiante[]}
+ */
 let studentsData = [];
+
+/**
+ * Matrícula del estudiante actualmente seleccionado en la interfaz.
+ * @type {string|null}
+ */
 let activeStudentMatricula = null;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,6 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSearch();
 });
 
+/**
+ * Muestra una sección específica de la interfaz gráfica y oculta las demás.
+ * @param {string} sectionId - El atributo ID del elemento HTML que representa la sección a mostrar.
+ */
 function showSection(sectionId) {
     document.querySelectorAll('.view-section').forEach(sec => sec.classList.add('hidden'));
     const target = document.getElementById(sectionId);
@@ -22,6 +35,11 @@ function showSection(sectionId) {
     }
 }
 
+/**
+ * Pide al servidor la lista completa de estudiantes y actualiza las tablas de la interfaz.
+ * @async
+ * @returns {Promise<void>}
+ */
 async function loadStudents() {
     try {
         const res = await fetch('/api/estudiantes');
@@ -33,6 +51,9 @@ async function loadStudents() {
     }
 }
 
+/**
+ * Configura el evento de búsqueda para filtrar la tabla de estudiantes en tiempo real.
+ */
 function setupSearch() {
     const searchInput = document.getElementById('search-estudiantes');
     if (searchInput) {
@@ -47,6 +68,10 @@ function setupSearch() {
     }
 }
 
+/**
+ * Renderiza la tabla principal con los datos de los estudiantes.
+ * @param {Estudiante[]} [lista=studentsData] - Lista de estudiantes a renderizar (por defecto usa el arreglo global).
+ */
 function renderStudentsTable(lista = studentsData) {
     const tbody = document.getElementById('tbody-estudiantes');
     if (!tbody) return;
@@ -76,6 +101,11 @@ function renderStudentsTable(lista = studentsData) {
     });
 }
 
+/**
+ * Obtiene el kardex del estudiante seleccionado desde el servidor, calcula su promedio ponderado y lo muestra en pantalla.
+ * @async
+ * @returns {Promise<void>}
+ */
 async function abrirPromedio() {
     if (!activeStudentMatricula) {
         alert('Por favor selecciona un estudiante en la tabla.');
@@ -116,6 +146,11 @@ async function abrirPromedio() {
     }
 }
 
+/**
+ * Prepara la vista y el formulario para inscribir una Experiencia Educativa al estudiante seleccionado.
+ * @async
+ * @returns {Promise<void>}
+ */
 async function abrirAgregarEE() {
     if (!activeStudentMatricula) {
         alert('Por favor selecciona un estudiante en la tabla.');
@@ -156,6 +191,11 @@ async function abrirAgregarEE() {
     }
 }
 
+/**
+ * Carga el kardex del estudiante y muestra la vista para dar de baja Experiencias Educativas.
+ * @async
+ * @returns {Promise<void>}
+ */
 async function abrirQuitarEE() {
     if (!activeStudentMatricula) {
         alert('Por favor selecciona un estudiante en la tabla.');
@@ -175,6 +215,10 @@ async function abrirQuitarEE() {
     }
 }
 
+/**
+ * Renderiza la tabla de materias inscritas por el estudiante con botones para su eliminación.
+ * @param {Object[]} materias - Arreglo con la información de las materias inscritas por el alumno.
+ */
 function renderQuitarEETable(materias) {
     const tbody = document.getElementById('tbody-quitar-ee');
     if (!tbody) return;
@@ -199,6 +243,13 @@ function renderQuitarEETable(materias) {
     });
 }
 
+/**
+ * Intercepta la confirmación del usuario y envía una petición DELETE al servidor para quitar una materia del historial del alumno.
+ * @async
+ * @param {string} idInscripcion - El identificador único de la inscripción a eliminar.
+ * @param {string} nombreEE - El nombre de la Experiencia Educativa (usado para el mensaje de confirmación).
+ * @returns {Promise<void>}
+ */
 async function confirmarQuitarEE(idInscripcion, nombreEE) {
     if (!confirm(`¿Deseas quitar "${nombreEE}" del historial de este estudiante?`)) return;
     try {
@@ -212,10 +263,16 @@ async function confirmarQuitarEE(idInscripcion, nombreEE) {
     }
 }
 
+/**
+ * Activa la vista de la sección para dar de alta nuevas Experiencias Educativas en el catálogo.
+ */
 function abrirCatalogoCrearEE() {
     showSection('crear-ee-catalogo');
 }
 
+/**
+ * Asigna los eventos de envío (submit) a todos los formularios de la interfaz para procesar las peticiones a la API.
+ */
 function setupForms() {
     const formEst = document.getElementById('form-estudiante');
     if (formEst) {
@@ -346,6 +403,11 @@ function setupForms() {
     }
 }
 
+/**
+ * Consulta el catálogo de materias en el servidor y renderiza la tabla de edición de Experiencias Educativas.
+ * @async
+ * @returns {Promise<void>}
+ */
 async function renderModificarEE() {
     try {
         const res = await fetch('/api/materias');
@@ -377,6 +439,9 @@ async function renderModificarEE() {
     }
 }
 
+/**
+ * Renderiza la tabla de estudiantes habilitada para seleccionar y modificar sus datos.
+ */
 function renderModifyStudentsTable() {
     const tbody = document.getElementById('tbody-mod-alumnos');
     if (!tbody) return;
@@ -398,6 +463,11 @@ function renderModifyStudentsTable() {
     });
 }
 
+/**
+ * Actualiza la lista de estudiantes y cambia a la vista para eliminar alumnos del sistema.
+ * @async
+ * @returns {Promise<void>}
+ */
 async function mostrarPantallaEliminarEstudiante() {
     await loadStudents();
     const tbody = document.getElementById('tbody-eliminar-estudiantes');
@@ -418,6 +488,13 @@ async function mostrarPantallaEliminarEstudiante() {
     showSection('eliminar-estudiante-view');
 }
 
+/**
+ * Solicita la confirmación del usuario y ejecuta la petición DELETE para remover un estudiante del servidor.
+ * @async
+ * @param {string} matricula - La matrícula del estudiante a eliminar.
+ * @param {string} nombre - El nombre del estudiante para el mensaje de alerta.
+ * @returns {Promise<void>}
+ */
 async function confirmarEliminarEstudiante(matricula, nombre) {
     if (!confirm(`¿Estás seguro de que deseas eliminar al estudiante ${nombre} (${matricula})? Esta acción no se puede deshacer.`)) {
         return;
@@ -437,6 +514,11 @@ async function confirmarEliminarEstudiante(matricula, nombre) {
     }
 }
 
+/**
+ * Consulta el servidor y muestra la pantalla con la lista de materias disponibles para eliminar.
+ * @async
+ * @returns {Promise<void>}
+ */
 async function mostrarPantallaEliminarEE() {
     try {
         const res = await fetch('/api/materias');
@@ -463,6 +545,13 @@ async function mostrarPantallaEliminarEE() {
     }
 }
 
+/**
+ * Pide confirmación y manda la petición DELETE a la API para eliminar una Experiencia Educativa del catálogo.
+ * @async
+ * @param {string} nrc - El NRC de la materia a eliminar.
+ * @param {string} nombre - El nombre de la materia para mostrar en el mensaje.
+ * @returns {Promise<void>}
+ */
 async function confirmarEliminarEE(nrc, nombre) {
     if (!confirm(`¿Deseas eliminar del catálogo la materia "${nombre}" (NRC: ${nrc})?`)) {
         return;
